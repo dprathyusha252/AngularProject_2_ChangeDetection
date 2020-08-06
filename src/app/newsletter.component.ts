@@ -7,8 +7,7 @@ import {User} from './user.component';
 })
 export class NewsLetterComponent {
 
-  @Input()
-  user: User;
+  @Input()user: User;
 
   @Output()
   subscribe = new EventEmitter();
