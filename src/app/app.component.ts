@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {User} from './user.component';
 import {NewsLetterService} from './newsletter.service';
 
@@ -8,7 +8,7 @@ import {NewsLetterService} from './newsletter.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   user: User = {
       firstName: 'Prathyusha',
@@ -18,12 +18,23 @@ export class AppComponent {
 
   }
 
+  ngOnInit(){
+    setTimeout(() => {
+    this.user = {
+      firstName: 'Surendra',
+      lastName: 'Davuluri'
+      }
+    }, 3000);
+  }
   subscribe(email:string) {
     this.newsletterService.subscribe(email);
   }
 
-  changeUserName() {
-    this.user.firstName = 'Bob';
-  }
+  // changeUserName() {
+  //   this.user = {
+  //   firstName : 'Bob',
+  //   lastName : 'Smith'
+  //   }
+  // }
 
 }
