@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
-import {Subject} from 'rxjs/Rx';
 import {ToggleStateService} from '../toggle-state.service';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-default-change-detection',
